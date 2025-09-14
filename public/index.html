@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fragrance Finder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Fragrance Finder</h1>
+    <p>Describe a scene. We infer notes locally and search trusted sources for perfumes and prices.</p>
+  </header>
+
+  <main>
+    <section class="input">
+      <label for="scene">Scenic description</label>
+      <textarea id="scene" placeholder="e.g., A misty pine forest at dawn: cool air, dewy moss, citrus sunlight breaking through..." rows="5"></textarea>
+      <div class="actions">
+        <button id="extract">Extract Notes</button>
+        <button id="find">Find Fragrances</button>
+      </div>
+      <div id="status" class="status" hidden></div>
+    </section>
+
+    <section class="notes" id="notes" hidden>
+      <h2>Notes</h2>
+      <div class="pill-row" id="notes-top"></div>
+      <div class="pill-row" id="notes-middle"></div>
+      <div class="pill-row" id="notes-base"></div>
+    </section>
+
+    <section class="results" id="results" hidden>
+      <h2>Suggestions</h2>
+      <div id="cards" class="cards"></div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Local LLM via Ollama + Google CSE (Fragrantica/Parfumo/Basenotes)</span>
+  </footer>
+
+  <script src="/main.js"></script>
+</body>
+</html>
